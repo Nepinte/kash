@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+<div class="container-fluid">
+<div class="nav-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="">Aita Subba</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end bg-dark " tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item" id="home">
+          <a class="nav-link" href="/Secrets">HOME</a>
+        </li>
+        <li class="nav-item" id="posting">
+          <a class="nav-link" href="/story">STORY</a>
+        </li>
+        <li class="nav-item" id="weather">
+          <a class="nav-link" href="/weather">WEATHER</a>
+        </li>
+        <li class="nav-item" id="logout">
+          <a class="nav-link" href="/logout">LOGOUT</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<hr>
+
+<div class="compose">
+  <h1>Post Story</h1>
+  <form class="compose-form" action="/compose" method="post">
+    <div class="form-group">
+      <label>Title</label>
+      <input class="form-control" type="text" name="postTitle" placeholder="Your Title!" autofocus>
+      <label>Description</label>
+      <textarea class="form-control" name="postBody" rows="10" cols="30" placeholder="Write Anything To Describe!"></textarea>
+    </div>
+    <div class="from-btn">
+      <button class="btn btn-dark" type="submit" name="button">Publish</button>
+    </div>
+  </form>
+  </div>
+
+  <%- include('partials/footer') %>

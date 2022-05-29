@@ -1,0 +1,47 @@
+<%- include("partials/header"); -%>
+<div class="container-fluid">
+<div class="nav-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="">Aita Subba</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end bg-dark " tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item" id="home">
+          <a class="nav-link" href="/Secrets">HOME</a>
+        </li>
+        <li class="nav-item" id="posting">
+          <a class="nav-link" href="/story">STORY</a>
+        </li>
+        <li class="nav-item" id="weather">
+          <a class="nav-link" href="/weather">WEATHER</a>
+        </li>
+        <li class="nav-item" id="logout">
+          <a class="nav-link" href="/logout">LOGOUT</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="stories">
+  <div class="stories-link">
+    <a class="btn btn-dark " href="/compose" role="button">Post Your Story</a>
+  </div>
+  <hr>
+<div class="stories-card">
+    <% posts.forEach(function(post){ %>
+      <div class="stories-img">
+        <!--position: absolute-->
+        <iframe src="https://picsum.photos/200/300?random=1" width="204" height="308"></iframe>
+      </div>
+    <div class="stories-text">
+      <h2 ><%=post.title%></h2>
+      <p > <%=post.content%></p>
+    </div>
+    <% }) %>
+</div>
+</div>
+
+<%- include("partials/footer"); -%>
